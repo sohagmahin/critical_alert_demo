@@ -6,7 +6,7 @@ from decouple import config
 # service_account_path = config('SERVICE_ACCOUNT_PATH')
 
 # Set the path manually (as per your example)
-service_account_path = "/Users/sohag/Desktop/critical-alert-test-a8c92-firebase-adminsdk-re97v-4e421f4e4c.json"
+service_account_path = "/Users/sohag/Desktop/critical-alert-firebase-adminsdk.json"
 
 # Initialize the Firebase app with the service account
 cred = credentials.Certificate(service_account_path)

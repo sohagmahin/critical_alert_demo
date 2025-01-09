@@ -40,7 +40,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static Future<void> requestForDNDAccess(BuildContext context) async {
+  static Future<void> requestDoNotDisturbPermission(
+      BuildContext context) async {
     final dndPlugin = DoNotDisturbPlugin();
     bool hasAccess = await dndPlugin.isNotificationPolicyAccessGranted();
 
@@ -80,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     if (Platform.isAndroid) {
-      requestForDNDAccess(context);
+      requestDoNotDisturbPermission(context);
     }
     super.didChangeDependencies();
   }
