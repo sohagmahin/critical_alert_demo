@@ -107,27 +107,11 @@ class LocalNotificationService {
         ),
       );
 
-      const NotificationDetails notificationDetailsNoSound =
-          NotificationDetails(
-        android: AndroidNotificationDetails(
-          defaultChannel,
-          "Default notification channel ",
-          channelDescription:
-              "Default channel to receive all normal notification message",
-          importance: Importance.high,
-          priority: Priority.high,
-          ongoing: true,
-          enableVibration: true,
-        ),
-      );
       _notificationsPlugin.show(
         id,
         message.data["title"],
         message.data["body"],
-        message.data["critical"] == "true"
-            ? notificationDetails
-            : notificationDetailsNoSound,
-        //notificationDetails,
+        notificationDetails,
       );
     } on Exception catch (e) {
       print(e);
