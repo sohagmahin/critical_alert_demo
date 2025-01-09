@@ -2,9 +2,6 @@ import firebase_admin
 from firebase_admin import credentials, messaging
 from decouple import config
 
-# Load the path to the service account key from the environment file
-# service_account_path = config('SERVICE_ACCOUNT_PATH')
-
 # Set the path manually (as per your example)
 service_account_path = "/Users/sohag/Desktop/critical-alert-firebase-adminsdk.json"
 
@@ -15,10 +12,7 @@ firebase_admin.initialize_app(cred)
 def send_notification_to_all(message_title, message_body):
     # Create a message to send to all users
     message = messaging.Message(
-        notification=messaging.Notification(
-            title=message_title,
-            body=message_body,
-        ),
+        notification=messaging.Notification(),
         topic='all',
         data={
             "title": message_title,
