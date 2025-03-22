@@ -1,4 +1,4 @@
-# critical_alert
+# Flutter Critical Alert Notifications
 
 This demo showcases a Flutter app triggering a critical alert notification, which overrides silent mode and Do Not Disturb settings. The alert is displayed with high priority, ensuring users receive important notifications instantly
 
